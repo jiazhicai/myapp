@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+             margin:0 10px;
+             padding:0;
+     }
+         #box {
+             height: 300px;
+             width: 300px;
+             border-left: 1px solid #333;
+             border-bottom: 1px solid #ccc;
+     }
+        .rect3 {
+            float: right;
+            width: 70%;
+            margin-right: 30%;
+            background-color: #0fd;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td>用户</td><td>墙头草指数</td>
+        </tr>
+        {% for user in data %}
+        <tr>
+            <td>{{user.user_uuid}}"--"{{user.user_name}}</td>
+            <td>
+                <div id="box">
+                    <div class="rect3"></div>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+
+</body>
+</html>
