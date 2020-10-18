@@ -8,25 +8,13 @@
 from django.db import models
 
 
-class AllBaseInfo(models.Model):
+class FinallPageDatas(models.Model):
     user_uuid = models.CharField(max_length=50, primary_key=True)
-    user_id = models.CharField(max_length=1000, blank=True, null=True)
     user_url = models.CharField(max_length=1000, blank=True, null=True)
     user_name = models.CharField(max_length=1000, blank=True, null=True)
-    cmt_uuid = models.CharField(max_length=50)
-    cmt_id = models.CharField(max_length=300, blank=True, null=True)
-    cmt_time = models.DateTimeField(blank=True, null=True)
-    cmt_text = models.CharField(max_length=8000, blank=True, null=True)
-    blog_uuid = models.CharField(max_length=50)
-    blog_id = models.CharField(max_length=1000, blank=True, null=True)
-    blog_url = models.CharField(max_length=1000, blank=True, null=True)
-    blog_time = models.DateTimeField(blank=True, null=True)
-    blog_text = models.CharField(max_length=8000, blank=True, null=True)
-    blog_writer_uuid = models.CharField(max_length=50)
-    blog_writer_url = models.CharField(max_length=1000, blank=True, null=True)
-    blog_writer = models.CharField(max_length=1000, blank=True, null=True)
-    blog_writer_group = models.CharField(max_length=255, blank=True, null=True)
+    json = models.TextField(blank=True, null=True)
+    prob = models.FloatField(blank=True, null=True)
 
     class Meta:
         managed = False  # Created from a view. Don't remove.
-        db_table = 'all_base_info'
+        db_table = 'finall_page_datas'

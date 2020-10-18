@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from appdata import views
+from django.conf.urls import include, url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user_test/', views.table),
+    url(r'^data/', views.table)
 ]
